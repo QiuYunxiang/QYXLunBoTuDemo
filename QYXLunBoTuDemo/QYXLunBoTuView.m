@@ -49,7 +49,6 @@
     _realCount = NSIntegerMax;
     [self addObserver:self forKeyPath:@"imageDataArr" options:(NSKeyValueObservingOptionNew) context:nil];
     [self addSubview:self.scroll];
-    [self addSubview:self.pageVC];
     [self.scroll addSubview:self.currentView];
     [self.scroll addSubview:self.leftView];
     [self.scroll addSubview:self.rightView];
@@ -196,6 +195,7 @@
         if (_realCount == 1) {
             _pageVC.hidden = YES;
         }
+        [self addSubview:_pageVC];
     }
     return _pageVC;
 }
